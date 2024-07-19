@@ -159,6 +159,9 @@ extension ParmaCore: XMLParserDelegate {
         
         if element.isInline {
             if let text = inlineComposers[element]?.text(in: context, render: render) {
+                text.onTapGesture {
+                    print("Hehee")
+                }
                 if let superEl = context.superElement, superEl.isInline {
                     context.texts = []
                     context.texts.append(text)
